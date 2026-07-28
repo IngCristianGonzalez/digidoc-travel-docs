@@ -74,22 +74,18 @@ Especificación de requerimientos del sistema.
 
 Documentos de diseño por módulo.
 
-| Módulo | Descripción |
-|--------|-------------|
-| `Authentication/` | SDD-001: Autenticación y autorización |
-| `Users/` | Gestión de usuarios |
-| `Students/` | Gestión de estudiantes |
-| `Documents/` | Gestión documental |
-| `Visa/` | Seguimiento de visas |
-| `Payments/` | Gestión de pagos |
-| `Events/` | Gestión de eventos |
-| `Notifications/` | Sistema de notificaciones |
-| `Dashboard/` | Panel administrativo |
-| `Reports/` | Generación de reportes |
-
-### Módulo Auth (SDD-001)
-
-Documento completo en [`02-SDD/Authentication/SDD-AUTH-001.md`](./02-SDD/Authentication/SDD-AUTH-001.md)
+| SDD | Módulo | Descripción | RF |
+|-----|--------|-------------|-----|
+| [SDD-001](./02-SDD/Authentication/SDD-AUTH-001.md) | Authentication | Autenticación y autorización | RF-001 a RF-006 |
+| [SDD-002](./02-SDD/Users/SDD-USERS-002.md) | Users | Gestión de usuarios | RF-007 a RF-011 |
+| [SDD-003](./02-SDD/Students/SDD-STUDENTS-003.md) | Students | Gestión de estudiantes | RF-012 a RF-016 |
+| [SDD-004](./02-SDD/Documents/SDD-DOCUMENTS-004.md) | Documents | Gestión documental | RF-017 a RF-024 |
+| [SDD-005](./02-SDD/Visa/SDD-VISA-005.md) | Visa | Seguimiento de visas | RF-025 a RF-030 |
+| [SDD-006](./02-SDD/Payments/SDD-PAYMENTS-006.md) | Payments | Plan de pagos | RF-031 a RF-036 |
+| [SDD-007](./02-SDD/Events/SDD-EVENTS-007.md) | Events | Gestión de eventos | RF-037 a RF-041 |
+| [SDD-008](./02-SDD/Notifications/SDD-NOTIFICATIONS-008.md) | Notifications | Sistema de notificaciones | RF-042 a RF-045 |
+| [SDD-009](./02-SDD/Reports/SDD-REPORTS-009.md) | Reports | Generación de reportes | RF-046 a RF-050 |
+| [SDD-010](./02-SDD/Dashboard/SDD-DASHBOARD-010.md) | Dashboard | Panel administrativo | RF-051 a RF-056 |
 
 ---
 
