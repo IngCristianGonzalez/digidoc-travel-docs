@@ -1,0 +1,105 @@
+openapi: 3.0.3
+info:
+  title: DigiDoc Travel API
+  description: API para el sistema de gestión documental DigiDoc Travel
+  version: 1.0.0
+
+servers:
+  - url: http://localhost:3000/api/v1
+    description: Development
+  - url: https://api.digidoc.com/v1
+    description: Production
+
+paths:
+  /auth/login:
+    post:
+      summary: Iniciar sesión
+      tags: [Authentication]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  format: email
+                password:
+                  type: string
+                  format: password
+      responses:
+        '200':
+          description: Login exitoso
+        '401':
+          description: Credenciales incorrectas
+        '429':
+          description: Rate limit excedido
+
+  /auth/logout:
+    post:
+      summary: Cerrar sesión
+      tags: [Authentication]
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Logout exitoso
+
+  /auth/refresh:
+    post:
+      summary: Renovar token
+      tags: [Authentication]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                refreshToken:
+                  type: string
+      responses:
+        '200':
+          description: Token renovado
+        '401':
+          description: Refresh token inválido
+
+  /auth/forgot-password:
+    post:
+      summary: Recuperar contraseña
+      tags: [Authentication]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  format: email
+      responses:
+        '200':
+          description: Correo enviado
+        '404':
+          description: Usuario no encontrado
+
+  /auth/profile:
+    get:
+      summary: Obtener perfil
+      tags: [Authentication]
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Perfil del usuario
+        '401':
+          description: No autenticado
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
